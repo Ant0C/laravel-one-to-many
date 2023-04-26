@@ -17,4 +17,8 @@ class Portfolio extends Model
         'slug',
         'url',
     ];
+
+    public function type(){
+        return $this->belongsto(Type::class);
+    }
 }

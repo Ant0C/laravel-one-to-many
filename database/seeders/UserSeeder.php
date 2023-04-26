@@ -15,11 +15,11 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        $user = User::create([
-            'name' => 'acv',
-            'email' => 'cafeo97@gmail.com',
-            'password' => Hash::make('qwertyui'),
-        ]);
+        // $user = User::create([
+        //     'name' => 'acv',
+        //     'email' => 'cafeo97@gmail.com',
+        //     'password' => Hash::make('qwertyui'),
+        // ]);
 
     }
 }

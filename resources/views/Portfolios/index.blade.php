@@ -25,7 +25,7 @@
                             <th scope="col">Name</th>
                             <th scope="col">Customer</th>
                             <th scope="col">Description</th>
-                            <th scope="col">Slug</th>
+                            <th scope="col">Tipo di lavoro</th>
                             <th scope="col">Url</th>
                         </tr>
                     </thead>
@@ -36,7 +36,7 @@
                             <td>{{ $item->name }}</a></td>
                             <td>{{ $item->customer }}</td>
                             <td>{{ $item->description }}</td>
-                            <td>{{ $item->slug }}</td>
+                            <td>{{ $item->type ? $item->type->name: '-' }}</td>
                             <td>{{ $item->url }}</td>
                             <td>
                                 <form action="{{route('portfolios.destroy',$item)}}" method="POST">
