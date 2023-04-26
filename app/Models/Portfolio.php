@@ -16,6 +16,7 @@ class Portfolio extends Model
         'description',
         'slug',
         'url',
+        'type_id'
     ];
 
     public function type(){

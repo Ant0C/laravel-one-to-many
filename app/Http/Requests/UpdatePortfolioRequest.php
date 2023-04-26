@@ -28,7 +28,8 @@ class UpdatePortfolioRequest extends FormRequest
             'name'=> ['required',Rule::unique('portfolios','name')->ignore($this->portfolio)],
             'customer'=>'string',
             'description' => 'string',
-            'url'=> 'url'
+            'url' => 'url',
+            'type_id' => 'nullable|exists:types,id'
         ];
     }
 }

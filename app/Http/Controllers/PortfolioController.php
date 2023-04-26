@@ -7,6 +7,7 @@ use App\Http\Requests\StorePortfolioRequest;
 use App\Http\Requests\UpdatePortfolioRequest;
 use App\Models\Portfolio;
 use Illuminate\Support\Str;
+use App\Models\Type;
 
 class PortfolioController extends Controller
 {
@@ -34,7 +35,8 @@ class PortfolioController extends Controller
      */
     public function create()
     {
-        return view('portfolios.create');
+        $types = Type::all();
+        return view('portfolios.create', compact('types'));
     }
 
     /**
@@ -73,7 +75,8 @@ class PortfolioController extends Controller
      */
     public function edit(Portfolio $portfolio)
     {
-        return view('portfolios.edit', compact('portfolio'));
+        $types = Type::all();
+        return view('portfolios.edit', compact('portfolio','types'));
     }
 
     /**

@@ -25,6 +25,22 @@
                 @enderror
             </div>
             <div class="mb-3">
+              <label for="type-id" class="form-label">Categoria</label>
+              <select class="form-select @error('type_id') is-invalid @enderror" id="type-id" name="type_id" aria-label="Default select example">
+                <option value="" selected>Seleziona tipo di lavoro</option>
+                @foreach ($types as $type)
+                  <option @selected( old('type_id' , $portfolio->type_id) == $type->id ) value="{{ $type->id }}">{{ $type->name }}</option>
+                @endforeach
+              </select>
+              {{-- <input type="text" name="title" class="form-control @error('title') is-invalid @enderror" value="{{ old('title') }}" id="title" aria-describedby="titleHelp"> --}}
+              {{-- errore title --}}
+              @error('category_id')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+              @enderror
+            </div>
+            <div class="mb-3">
                 <label for="description" class="form-label">Description</label>
                 <input type="text" name="description" class="form-control @error('description') is-invalid @enderror" id="description" value="{{ old('description', $portfolio->description)}}">
                 @error('description')

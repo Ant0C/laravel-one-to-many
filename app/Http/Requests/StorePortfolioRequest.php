@@ -27,7 +27,8 @@ class StorePortfolioRequest extends FormRequest
             'name'=> 'required|unique:portfolios,name',
             'customer'=>'string',
             'description' => 'string',
-            'url'=>'url'
+            'url' =>'url',
+            'type_id' => 'nullable|exists:types,id'
         ];
     }
 }

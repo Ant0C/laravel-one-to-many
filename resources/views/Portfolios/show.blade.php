@@ -11,6 +11,9 @@
             <div class="row">
                 <div>
                     <h1>{{ $portfolio->name }}</h1>
+                    <h2 class="badge rounded-pill bg-warning">
+                       {{$portfolio->type->name}} 
+                    </h2>
                     <p>{{ $portfolio->slug }}</p>
                 </div>
                 <div>
